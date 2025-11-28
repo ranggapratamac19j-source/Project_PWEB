@@ -1,0 +1,188 @@
+/* ----------------------------- */
+/* RESET DEFAULT                 */
+/* ----------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------------- */
+/* HEADER STYLE                  */
+/* ----------------------------- */
+/* ----------------------------- */
+/* MODERN GLASS HEADER           */
+/* ----------------------------- */
+.header {
+    width: 100%;
+    padding: 18px 0;
+    background: rgba(255, 255, 255, 0.4);   
+    backdrop-filter: blur(10px);           
+    -webkit-backdrop-filter: blur(10px);
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 1.5px;
+}
+
+
+
+/* ----------------------------- */
+/* FORM STYLE (index)            */
+/* ----------------------------- */
+body {
+    font-family: Arial;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #ddd;
+}
+
+.title {
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+.penulis {
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.harga {
+    color: #e63946;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-right: 5px;
+    color: white;
+}
+
+.edit {
+    background: #4880ec;
+}
+
+.hapus {
+    background: #e63946;
+}
+
+.btn-tambah {
+    padding: 10px 15px;
+    background: #06d6a0;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* ----------------------------- */
+/* FORM STYLE (tambah & edit)    */
+/* ----------------------------- */
+.form-container {
+    max-width: 450px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #06d6a0;
+    border: none;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #04b486;
+}
+
+.btn-kembali {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    text-decoration: none;
+    padding: 10px;
+    background: #888;
+    color: white;
+    border-radius: 8px;
+}
+
+.btn-kembali:hover {
+    background: #666;
+}
