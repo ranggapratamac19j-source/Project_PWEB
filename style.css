@@ -96,13 +96,16 @@ h2 {
 }
 
 .btn {
-    display: inline-block;
-    padding: 8px 12px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;        /* atur lebar tombol */
+    padding: 8px 0;     /* tinggi seragam */
     text-decoration: none;
     border-radius: 6px;
     font-size: 14px;
-    margin-right: 5px;
     color: white;
+    font-weight: 600;
 }
 
 .edit {

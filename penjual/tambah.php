@@ -1,10 +1,10 @@
-<?php include 'config.php'; ?>
+<?php include '../config.php'; ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Tambah Buku</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 

@@ -1,5 +1,5 @@
 <?php 
-include 'config.php';
+include '../config.php';
 $data = mysqli_query($koneksi, "SELECT * FROM buku");
 ?>
 
@@ -7,7 +7,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM buku");
 <html>
 <head>
     <title>Daftar Buku</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     
@@ -23,7 +23,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM buku");
 <?php while ($b = mysqli_fetch_assoc($data)) { ?>
     <div class="card">
         <?php
-        $gambar = $b['gambar'] ? "uploads/" . $b['gambar'] : "https://via.placeholder.com/300x200?text=No+Image";
+        $gambar = $b['gambar'] ? "../uploads/" . $b['gambar'] : "https://via.placeholder.com/300x200?text=No+Image";
         ?>
         <img src="<?= $gambar ?>" class="book-image">
 
