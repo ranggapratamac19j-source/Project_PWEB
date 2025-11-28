@@ -25,7 +25,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM buku");
         <?php
         $gambar = $b['gambar'] ? "uploads/" . $b['gambar'] : "https://via.placeholder.com/300x200?text=No+Image";
         ?>
-        <img src="<?= $gambar ?>">
+        <img src="<?= $gambar ?>" class="book-image">
 
         <div class="title"><?= $b['judul'] ?></div>
         <div class="penulis">By <?= $b['penulis'] ?></div>
