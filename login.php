@@ -11,14 +11,16 @@ if (isset($_POST['login'])) {
     $data = mysqli_fetch_assoc($query);
 
     if ($data) {
+        $_SESSION['id'] = $data['id'];
         $_SESSION['username'] = $data['username'];
         $_SESSION['role'] = $data['role'];
 
         if ($data['role'] == 'penjual') {
             header("Location: penjual/index.php");
-        } else {
-            header("Location: index.php");
+        } else if ($data['role'] == 'pembeli') {
+            header("Location: pembeli/index.php");
         }
+
     } else {
         echo "<script>alert('Username / Password salah!');</script>";
     }

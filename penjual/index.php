@@ -12,11 +12,17 @@ $data = mysqli_query($koneksi, "SELECT * FROM buku");
 <body>
     
 <header class="header">
-    <h1>Toko Buku</h1>
+    <h1><a href="index.php" class="header-title">Toko Buku</a></h1>
 </header>
 
-<h2>Daftar Buku</h2>
-<a href="tambah.php" class="btn-tambah">+ Tambah Buku</a>
+<div class="navbar">
+    <span class="nav-title">Daftar Buku</span>
+
+    <div class="nav-right">
+        <a href="tambah.php" class="nav-btn">+ Tambah Buku</a>
+        <a href="../logout.php" class="btn-logout">Logout</a>
+    </div>
+</div>
 
 <div class="container">
 

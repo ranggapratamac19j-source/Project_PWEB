@@ -1,5 +1,5 @@
 <?php 
-include 'config.php';
+include '../config.php';
 $id = $_GET['id'];
 $data = mysqli_query($koneksi, "SELECT * FROM buku WHERE id=$id");
 $b = mysqli_fetch_assoc($data);
@@ -9,7 +9,7 @@ $b = mysqli_fetch_assoc($data);
 <html>
 <head>
     <title>Edit Buku</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
@@ -62,7 +62,7 @@ if (isset($_POST['update'])) {
     if ($namaBaru != "") {
         // jika ada gambar baru
         $tmpFile = $_FILES['gambar']['tmp_name'];
-        move_uploaded_file($tmpFile, "uploads/" . $namaBaru);
+        move_uploaded_file($tmpFile, "../uploads/" . $namaBaru);
 
         $gambarUpdate = ", gambar='$namaBaru'";
     } else {

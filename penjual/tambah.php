@@ -50,18 +50,28 @@ if (isset($_POST['simpan'])) {
     $tahun = $_POST['tahun'];
     $harga = $_POST['harga'];
 
-    // upload gambar
+    // Upload gambar
     $namaFile = $_FILES['gambar']['name'];
     $tmpFile = $_FILES['gambar']['tmp_name'];
 
-    $folder = "uploads/" . $namaFile;
+    $folder = "../uploads/" . $namaFile;
 
-    move_uploaded_file($tmpFile, $folder);
+    if (!move_uploaded_file($tmpFile, $folder)) {
+        die("Upload gagal! Pastikan folder uploads bisa diakses.<br>");
+    }
 
-    mysqli_query($koneksi, "INSERT INTO buku VALUES 
-        (NULL, '$judul', '$penulis', '$tahun', '$harga', '$namaFile')");
+    // Insert database
+    $sql = "INSERT INTO buku (judul, penulis, tahun, harga, gambar)
+            VALUES ('$judul', '$penulis', '$tahun', '$harga', '$namaFile')";
+
+    $q = mysqli_query($koneksi, $sql);
+
+    if (!$q) {
+        die("SQL Error: " . mysqli_error($koneksi));
+    }
 
     header("Location: index.php");
+    exit;
 }
 
 ?>

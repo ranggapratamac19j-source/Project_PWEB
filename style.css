@@ -1,46 +1,12 @@
-/* ----------------------------- */
-/* RESET DEFAULT                 */
-/* ----------------------------- */
+/* -------------------------------- */
+/* RESET & GLOBAL STYLES           */
+/* -------------------------------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ----------------------------- */
-/* HEADER STYLE                  */
-/* ----------------------------- */
-/* ----------------------------- */
-/* MODERN GLASS HEADER           */
-/* ----------------------------- */
-.header {
-    width: 100%;
-    padding: 18px 0;
-    
-    /* transparansi lebih tinggi */
-    background: rgba(255, 255, 255, 0.15);  
-    backdrop-filter: blur(12px);           
-    -webkit-backdrop-filter: blur(12px);
-
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-
-    /* Garis bawah saja */
-    border-bottom: 1.5px solid rgba(255, 255, 255, 0.4);
-}
-
-.header h1 {
-    font-size: 40px;
-    font-weight: 700;
-    color: #222;   /* lebih soft daripada hitam pekat */
-    letter-spacing: 1.5px;
-}
-
-/* ----------------------------- */
-/* FORM STYLE (index)            */
-/* ----------------------------- */
 body {
     font-family: Arial;
     background: #f5f5f5;
@@ -48,35 +14,154 @@ body {
     padding: 20px;
 }
 
+/* -------------------------------- */
+/* SHARED STYLES                   */
+/* -------------------------------- */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
 h2 {
     margin-bottom: 20px;
 }
 
+/* -------------------------------- */
+/* HEADER (PENJUAL)               */
+/* -------------------------------- */
+.header {
+    width: 100%;
+    padding: 18px 0;
+    text-align: center;
+    position: static;
+    z-index: 10;
+}
+
+.header-title {
+    text-decoration: none;
+    color: inherit;      /* warna mengikuti h1 */
+    cursor: pointer;
+}
+.header-title:hover {
+    opacity: 0.8;
+}
+
+.header.glass-effect {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+.header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #222;
+    letter-spacing: 1.5px;
+}
+
+/* -------------------------------- */
+/* NAVBAR (PEMBELI)               */
+/* -------------------------------- */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    gap: 18px;
+    position: static;
+    z-index: 50;
+}
+
+.navbar.glass-effect {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+.nav-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-btn {
+    padding: 12px 24px;
+    background: #04b486;
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.nav-btn:hover {
+    background: #047f5e;
+}
+
+/* -------------------------------- */
+/* CONTAINER & GRID               */
+/* -------------------------------- */
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 20px;
 }
 
+.container.compact {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+/* -------------------------------- */
+/* CARD STYLES                     */
+/* -------------------------------- */
 .card {
     background: #fff;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 15px;
     box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    transition: 0.25s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+    transform: translateY(-4px);
+    box-shadow: 0px 8px 18px rgba(0,0,0,0.15);
 }
 
+.card h3 {
+    margin: 12px 0 6px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.card p {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.card img,
 .book-image {
     width: 100%;
-    height: 250px;       
-    object-fit: contain; 
+    height: 250px;
+    object-fit: contain;
     border-radius: 10px;
-    background-color: #f5f5f5; 
+    background-color: #f5f5f5;
+}
+
+.compact .card img {
+    height: 220px;
 }
 
 .title {
@@ -95,25 +180,54 @@ h2 {
     margin-bottom: 10px;
 }
 
-.btn {
+/* -------------------------------- */
+/* BUTTON STYLES                   */
+/* -------------------------------- */
+.btn,
+.button {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 80px;        /* atur lebar tombol */
-    padding: 8px 0;     /* tinggi seragam */
-    text-decoration: none;
-    border-radius: 6px;
+    padding: 10px 16px;
+    border-radius: 8px;
     font-size: 14px;
     color: white;
     font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn {
+    width: 80px;
+    padding: 8px 0;
 }
 
 .edit {
     background: #4880ec;
 }
 
-.hapus {
+.edit:hover {
+    background: #3a68d1;
+}
+
+.hapus,
+.btn-logout {
     background: #e63946;
+}
+
+.hapus:hover,
+.btn-logout:hover {
+    background: #c72d39;
+}
+
+.button {
+    background: #06d6a0;
+}
+
+.button:hover {
+    background: #05b988;
 }
 
 .btn-tambah {
@@ -124,11 +238,58 @@ h2 {
     text-decoration: none;
     margin-bottom: 15px;
     display: inline-block;
+    transition: 0.25s;
 }
 
-/* ----------------------------- */
-/* FORM STYLE (tambah & edit)    */
-/* ----------------------------- */
+.btn-tambah:hover {
+    background: #05b988;
+}
+
+.btn-kembali {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    background: #888;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.btn-kembali:hover {
+    background: #666;
+}
+
+.btn-back-glass {
+    display: inline-block;
+    margin: 8px 12px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #222;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.btn-back-glass:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.btn-logout {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-left: 10px;
+}
+
+/* -------------------------------- */
+/* FORM STYLES                     */
+/* -------------------------------- */
 .form-container {
     max-width: 450px;
     margin: 40px auto;
@@ -172,23 +333,160 @@ button {
     border-radius: 8px;
     cursor: pointer;
     margin-top: 10px;
+    transition: 0.25s;
 }
 
 button:hover {
     background: #04b486;
 }
 
-.btn-kembali {
-    display: block;
-    text-align: center;
-    margin-top: 15px;
-    text-decoration: none;
-    padding: 10px;
-    background: #888;
+/* -------------------------------- */
+/* TABLE STYLES (RIWAYAT)         */
+/* -------------------------------- */
+table {
+    width: 100%;
+    background: #fff;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+table th {
+    padding: 14px;
+    background: #4880ec;
     color: white;
+    font-size: 15px;
+}
+
+table td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+table img {
+    width: 70px;
     border-radius: 8px;
 }
 
-.btn-kembali:hover {
-    background: #666;
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 600;
+    margin: 16px 0px;
+    padding: 16px 16px;
+    background: #fff;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    border-radius: 12px;
+}
+
+.total-angka {
+    font-weight: 700;
+}
+
+.right-box {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.top-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin: 15px 0;
+}
+
+/* -------------------------------- */
+/* SEARCH STYLES                   */
+/* -------------------------------- */
+.search-books-container {
+    max-width: 500px;
+    padding: 20px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1.5px solid #ddd;
+    font-size: 16px;
+    transition: 0.25s;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #06d6a0;
+    box-shadow: 0 0 8px rgba(6, 214, 160, 0.2);
+}
+
+.search-box button {
+    margin: 0px;
+    padding: 12px 24px;
+    background: #06d6a0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.25s;
+    color: white;
+    font-size: 16px;
+}
+
+.search-box button:hover {
+    background: #05b988;
+}
+
+.book-results {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.book-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 8px 18px rgba(0,0,0,0.15);
+}
+
+.book-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #f5f5f5;
+    margin-bottom: 10px;
+}
+
+.book-card h4 {
+    margin: 10px 0 6px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.book-card p {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 8px;
 }
